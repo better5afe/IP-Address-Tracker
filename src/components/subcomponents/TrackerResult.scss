@@ -1,0 +1,16 @@
+@use '../../assets/colors.scss';
+
+.tracker-result {
+	padding: 1em;
+	background: colors.$white;
+	border-radius: 1.5rem;
+	box-shadow: -1px 9px 37px -16px colors.$very-dark-gray;
+	color: colors.$very-dark-gray;
+}
+
+@media (min-width: 992px) {
+	.tracker-result {
+		display: flex;
+		padding: 2em;
+	}
+}

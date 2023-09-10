@@ -9,7 +9,7 @@ const Header = () => {
 			<div className='header__wrapper'>
 				<h1 className='header__title'>IP Address Tracker</h1>
 				<TrackerForm />
-				{/* <TrackerResult /> */}
+				<TrackerResult />
 			</div>
 		</header>
 	);
