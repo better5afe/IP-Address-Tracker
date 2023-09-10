@@ -9,3 +9,8 @@
 html {
 	font-size: 62.5%;
 }
+
+body, input, input::placeholder {
+	font-family: 'Rubik', sans-serif;
+	font-size: 1.8rem;
+}
