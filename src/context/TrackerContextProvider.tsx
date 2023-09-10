@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TrackerContext } from './tracker-context';
 import { Error, AddressData } from '../models/models';
+import { LatLngTuple } from 'leaflet';
 
 interface TrackerContextProviderProps {
 	children: React.ReactNode;
@@ -17,7 +18,7 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 		timezone: '',
 		isp: '',
 	});
-
+	const [latLng, setLatLng] = useState<LatLngTuple>([0, 0]);
 	const [error, setError] = useState<Error>({ isError: false, errorMsg: '' });
 
 	const searchIPHandler = async (value: string) => {
@@ -29,7 +30,7 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 				);
 
 				if (!response.ok) {
-					setError({ isError: true, errorMsg: 'Something went wrong' });
+					setError({ isError: true, errorMsg: 'Incorrect input value' });
 					return;
 				}
 
@@ -42,12 +43,16 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 					isp: data.isp,
 				};
 
-				setResult(searchResult);
-				console.log(result);
-				return;
+				const resultLatLng: LatLngTuple = [
+					+data.location.lat.toFixed(2),
+					+data.location.lng.toFixed(2),
+				];
 
+				setResult(searchResult);
+				setLatLng(resultLatLng);
+				return;
 			} catch (error) {
-				console.log(error);
+				setError({ isError: true, errorMsg: 'Something went wrong' });
 			}
 
 			return;
@@ -56,12 +61,17 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 		setError({ isError: true, errorMsg: 'Input field cannot be empty.' });
 	};
 
+	useEffect(() => {
+		searchIPHandler(' ');
+	}, []);
+
 	return (
 		<TrackerContext.Provider
 			value={{
 				addressData: result,
 				searchIPHandler: searchIPHandler,
 				error: error,
+				latLng: latLng,
 			}}
 		>
 			{children}
