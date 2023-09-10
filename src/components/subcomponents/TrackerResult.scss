@@ -12,17 +12,12 @@
 	color: colors.$very-dark-gray;
 }
 
-@media (min-width: 992px) {
-	.tracker-result {
-		bottom: -75px;
-		display: flex;
-		padding: 2em;
-	}
-}
-
 @media (min-width: 1200px) {
 	.tracker-result {
 		right: 0;
+		bottom: -75px;
 		left: 0;
+		display: flex;
+		padding: 2em;
 	}
 }
