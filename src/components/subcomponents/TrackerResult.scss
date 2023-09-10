@@ -3,7 +3,7 @@
 .tracker-result {
 	position: absolute;
 	right: 1em;
-	bottom: -150px;
+	bottom: -118px;
 	left: 1em;
 	padding: 1em;
 	background: colors.$white;
@@ -11,6 +11,12 @@
 	box-shadow: -1px 9px 37px -16px colors.$very-dark-gray;
 	color: colors.$very-dark-gray;
 	z-index: 5;
+}
+
+@media (min-width: 768px) {
+	.tracker-result {
+		bottom: -130px;
+	}
 }
 
 @media (min-width: 1200px) {
