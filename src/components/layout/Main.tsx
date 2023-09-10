@@ -1,5 +1,13 @@
+import Map from '../subcomponents/Map';
+
+
+
 const Main = () => {
-	return <h1>Main</h1>;
+	return (
+		<main className='main'>
+			<Map />
+		</main>
+	);
 };
 
 export default Main;
