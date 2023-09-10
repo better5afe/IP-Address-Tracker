@@ -1,12 +1,10 @@
 import React from 'react';
+import { Error, AddressData } from '../models/models';
 
 interface TrackerContextProps {
-	addressData: {
-		ipAddress: string;
-		location: string;
-		timezone: string;
-		isp: string;
-	};
+	addressData: AddressData;
+	searchIPHandler: (value: string) => void;
+	error: Error;
 }
 
 export const TrackerContext = React.createContext<TrackerContextProps>({
@@ -16,4 +14,6 @@ export const TrackerContext = React.createContext<TrackerContextProps>({
 		timezone: '',
 		isp: '',
 	},
+	searchIPHandler: () => {},
+	error: { isError: false, errorMsg: '' },
 });

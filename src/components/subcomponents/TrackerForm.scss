@@ -11,10 +11,6 @@
 		border-top-left-radius: 1.5rem;
 		border-bottom-left-radius: 1.5rem;
 		outline: none;
-
-		&--error {
-			color: colors.$error;
-		}
 	}
 
 	&__button {
@@ -39,5 +35,10 @@
 		font-size: 1.5rem;
 		font-weight: 500;
 		color: colors.$error;
+		opacity: 0;
+
+		&--visible {
+			opacity: 1;
+		}
 	}
 }

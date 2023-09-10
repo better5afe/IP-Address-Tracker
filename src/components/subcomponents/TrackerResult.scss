@@ -22,9 +22,10 @@
 @media (min-width: 1200px) {
 	.tracker-result {
 		right: 0;
-		bottom: -75px;
+		bottom: -90px;
 		left: 0;
 		display: flex;
+		min-height: 205px;
 		padding: 2em;
 	}
 }
