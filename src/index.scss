@@ -1,3 +1,5 @@
+@use './assets/colors.scss';
+
 *,
 *::before,
 *::after {
@@ -10,7 +12,14 @@ html {
 	font-size: 62.5%;
 }
 
-body, input, input::placeholder {
+body,
+input,
+input::placeholder {
 	font-family: 'Rubik', sans-serif;
 	font-size: 1.8rem;
+}
+
+body,
+input {
+	color: colors.$very-dark-gray;
 }
