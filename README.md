@@ -29,7 +29,7 @@ Users are able to:
 
 - See loading animations while awaiting API's response.
 - See their own IP address as soon as the application is mounted for the first time.
-- Search for any valid IP addresses and see their detailed information.
+- Search for any valid IP addresses and see its detailed information.
 - If the input value is not valid (it's empty or the IP address does not exist), users will receive an according error message.
 - Address location is marked on the map using a custom icon.
 - Map is centered automatically as soon as the IP address location changes.
