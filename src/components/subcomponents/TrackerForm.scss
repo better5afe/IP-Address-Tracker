@@ -1,0 +1,43 @@
+@use '../../assets/colors.scss';
+
+.form {
+	max-width: 800px;
+	margin: 0 auto;
+
+	&__input {
+		width: calc(100% - 60px);
+		padding: 18px 0.8em;
+		border: 1px solid colors.$white;
+		border-top-left-radius: 1.5rem;
+		border-bottom-left-radius: 1.5rem;
+		outline: none;
+
+		&--error {
+			color: colors.$error;
+		}
+	}
+
+	&__button {
+		width: 60px;
+		height: 60px;
+		background: colors.$black;
+		border: none;
+		border-top-right-radius: 1.5rem;
+		border-bottom-right-radius: 1.5rem;
+		outline: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover,
+		&:focus {
+			background: colors.$very-dark-gray;
+		}
+	}
+
+	&__error {
+		margin-top: 0.5em;
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: colors.$error;
+	}
+}
