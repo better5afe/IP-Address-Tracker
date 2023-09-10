@@ -7,9 +7,10 @@
 	color: colors.$white;
 
 	&__wrapper {
+		position: relative;
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 1.2em 1em;
+		padding: 1.2em 1em 7em;
 		text-align: center;
 	}
 
