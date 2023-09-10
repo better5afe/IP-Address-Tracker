@@ -6,6 +6,7 @@ interface TrackerContextProps {
 	addressData: AddressData;
 	searchIPHandler: (value: string) => void;
 	error: Error;
+	isLoading: boolean;
 	latLng: LatLngTuple;
 }
 
@@ -18,5 +19,6 @@ export const TrackerContext = React.createContext<TrackerContextProps>({
 	},
 	searchIPHandler: () => {},
 	error: { isError: false, errorMsg: '' },
+	isLoading: false,
 	latLng: [0, 0],
 });

@@ -20,8 +20,11 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 	});
 	const [latLng, setLatLng] = useState<LatLngTuple>([0, 0]);
 	const [error, setError] = useState<Error>({ isError: false, errorMsg: '' });
+	const [isLoading, setIsLoading] = useState(false);
 
 	const searchIPHandler = async (value: string) => {
+		setIsLoading(true);
+
 		if (value.length > 0) {
 			setError({ isError: false, errorMsg: '' });
 			try {
@@ -48,16 +51,19 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 					+data.location.lng.toFixed(2),
 				];
 
+				setIsLoading(false);
 				setResult(searchResult);
 				setLatLng(resultLatLng);
 				return;
 			} catch (error) {
 				setError({ isError: true, errorMsg: 'Something went wrong' });
+				setIsLoading(false);
 			}
 
 			return;
 		}
 
+		setIsLoading(false)
 		setError({ isError: true, errorMsg: 'Input field cannot be empty.' });
 	};
 
@@ -71,6 +77,7 @@ const TrackerContextProvider: React.FC<TrackerContextProviderProps> = ({
 				addressData: result,
 				searchIPHandler: searchIPHandler,
 				error: error,
+				isLoading: isLoading,
 				latLng: latLng,
 			}}
 		>

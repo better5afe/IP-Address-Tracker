@@ -27,6 +27,7 @@ This project utilizes [IP Geolocation API](https://geo.ipify.org/) for searching
 
 Users are able to:
 
+- See loading animations while awaiting API's response.
 - See their own IP address as soon as the application is mounted for the first time.
 - Search for any valid IP addresses and see their detailed information.
 - If the input value is not valid (it's empty or the IP address does not exist), users will receive an according error message.
